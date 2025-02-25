@@ -1,13 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SurveyPage from "./pages/SurveyPage";
-import ThankYouPage from "./pages/ThankYouPage";
 
 function App() {
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<SurveyPage />} />
-        <Route path="/thank-you" element={<ThankYouPage />} />
       </Routes>
     </Router>
   );
