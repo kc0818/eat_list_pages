@@ -1,6 +1,7 @@
 {
   "name": "eat_list_pages",
   "version": "0.1.0",
+  "homepage": "https://kc0818.github.io/eat_list_pages",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
@@ -42,6 +43,5 @@
   },
   "devDependencies": {
     "gh-pages": "^6.3.0"
-  },
-  "homepage": "https://kc0818.github.io/eat-list-pages"
+  }
 }
