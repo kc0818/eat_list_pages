@@ -87,7 +87,7 @@ const App = () => {
 
             {/* Q1（静的選択肢） */}
             <label>
-                Q1: 地域を選択してください
+                Q1: 地域を選択してください<br></br>
                 <select value={q1} onChange={(e) => setQ1(e.target.value)}>
                     <option value="">選択してください</option>
                     {q1Options.map((option, index) => (
@@ -97,10 +97,11 @@ const App = () => {
                     ))}
                 </select>
             </label><br />
+            <p></p>
 
             {/* Q2（API連動） */}
             <label>
-                Q2: 病院を選択してください（※表示されるまで少し時間が掛かります）
+                Q2: 病院を選択してください（※表示されるまで少し時間が掛かります）<br></br>
                 <select value={q2} onChange={(e) => setQ2(e.target.value)}>
                     <option value="">選択してください</option>
                     {q2Options.length > 0 ? (
@@ -114,10 +115,11 @@ const App = () => {
                     )}
                 </select>
             </label><br />
+            <p></p>
 
             {/* Q3（静的選択肢） */}
             <label>
-                Q3: オンライン受付・予約の有無について選択してください
+                Q3: オンライン受付・予約の有無について選択してください<br></br>
                 <select value={q3} onChange={(e) => setQ3(e.target.value)}>
                     <option value="">選択してください</option>
                     {q3Options.map((option, index) => (
@@ -127,10 +129,11 @@ const App = () => {
                     ))}
                 </select>
             </label><br />
+            <p></p>
 
             {/* Q4（静的選択肢） */}
             <label>
-                Q4:マイクロスコープの使用の有無について選択してください
+                Q4:マイクロスコープの使用の有無について選択してください<br></br>
                 <select value={q4} onChange={(e) => setQ4(e.target.value)}>
                     <option value="">選択してください</option>
                     {q4Options.map((option, index) => (
@@ -140,10 +143,11 @@ const App = () => {
                     ))}
                 </select>
             </label><br />
+            <p></p>
 
             {/* Q5（静的選択肢） */}
             <label>
-                Q5: 擦過方法について選択してください
+                Q5: 擦過方法について選択してください<br></br>
                 <select value={q5} onChange={(e) => setQ5(e.target.value)}>
                     <option value="">選択してください</option>
                     {q5Options.map((option, index) => (

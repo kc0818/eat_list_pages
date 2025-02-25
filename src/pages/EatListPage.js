@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const DataTable = () => {
   const [data, setData] = useState([]); // データを保持する state
   const API_URL = "https://script.google.com/macros/s/AKfycbxEyNHIAiwRvxPAlmCmLOwwrIQFZoglHEIqnyZJ1bgGFXwHFcmRD0PZWsv819oSljC2/exec"; // 取得するAPIのURL
-  
+
   const navigate = useNavigate();
 
   const handleNavigate = () => {
@@ -32,19 +32,20 @@ const DataTable = () => {
     <div>
       <h2>EAT療法実施機関リスト</h2>
 
-      <b>各医療機関の情報募集中！情報をお持ちの方は下のボタンを押して投稿ページよりお願いします！</b>
-      <p></p>
+      <p>
+        <b>各医療機関の情報募集中！情報をお持ちの方は下のボタンを押して投稿ページよりお願いします！</b>
+        <br></br>
+        「オンライン受付・予約の有無」「マイクロスコープの使用有無」「擦過方法」について投稿お願いします
+        <br></br>
+        <button onClick={handleNavigate}>情報を投稿する</button>
+      </p>
 
-      <button onClick={handleNavigate}>情報を投稿する</button>
-      <p></p>
+      <p>※※※掲載情報については一切責任を負いかねます。必ず受診前にご自身でお問い合わせ願います※※※</p>
 
-      <b>※※※掲載情報については一切責任を負いかねます。必ず受診前にご自身でお問い合わせ願います※※※</b>
-      <p></p>
-      
-      <table border="1"　style={{ tableLayout: "fixed", width: "100%" }}>
+      <table border="1" style={{ tableLayout: "fixed", width: "100%" }}>
         <thead>
           <tr>
-            <th>地域</th> 
+            <th>地域</th>
             <th>医療機関名</th>
             <th>住所</th>
             <th>予約の必要性</th>
@@ -66,7 +67,7 @@ const DataTable = () => {
                 </td>
                 <td>{item.address}</td>
                 <td>{item.reserve_limitation}</td>
-                <td style={{whiteSpace: "normal", wordWrap: "break-word" }}>{item.disease_limitation}</td>
+                <td style={{ whiteSpace: "normal", wordWrap: "break-word" }}>{item.disease_limitation}</td>
                 <td>{item.reception}</td>
                 <td>{item.microscope}</td>
                 <td>{item.abrasion}</td>
@@ -79,6 +80,9 @@ const DataTable = () => {
           )}
         </tbody>
       </table>
+      <footer>
+        Copyright &copy; 2025 kc0818
+      </footer>
     </div>
   );
 };
