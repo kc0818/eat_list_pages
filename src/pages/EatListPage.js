@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 
 const DataTable = () => {
   const [data, setData] = useState([]); // データを保持する state
   const API_URL = "https://script.google.com/macros/s/AKfycbxEyNHIAiwRvxPAlmCmLOwwrIQFZoglHEIqnyZJ1bgGFXwHFcmRD0PZWsv819oSljC2/exec"; // 取得するAPIのURL
+  
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    // アンケートページ へ遷移
+    navigate('/surveyPage');
+  };
 
   // APIからデータを取得する関数
   const fetchData = async () => {
@@ -23,6 +31,15 @@ const DataTable = () => {
   return (
     <div>
       <h2>EAT療法実施機関リスト</h2>
+
+      <b>各医療機関の情報募集中！情報をお持ちの方は下のボタンを押して投稿ページよりお願いします！</b>
+      <p></p>
+
+      <button onClick={handleNavigate}>情報を投稿する</button>
+      <p></p>
+
+      <b>※※※掲載情報については一切責任を負いかねます。必ず受診前にご自身でお問い合わせ願います※※※</b>
+      <p></p>
       
       <table border="1"　style={{ tableLayout: "fixed", width: "100%" }}>
         <thead>

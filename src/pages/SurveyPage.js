@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 
 const apiUrl = `https://script.google.com/macros/s/AKfycbxEyNHIAiwRvxPAlmCmLOwwrIQFZoglHEIqnyZJ1bgGFXwHFcmRD0PZWsv819oSljC2/exec`
 window.googleDocCallback = function () { return true; };
@@ -15,6 +16,13 @@ const App = () => {
     const [q3, setQ3] = useState(""); // Q3の選択状態
     const [q4, setQ4] = useState(""); // Q4の選択状態
     const [q5, setQ5] = useState(""); // Q5の選択状態
+
+    const navigate = useNavigate();
+    
+      const handleNavigate = () => {
+        // トップページ へ遷移
+        navigate('/');
+      };
 
     useEffect(() => {
         if (!q1) return; // Q1が未選択ならAPIリクエストしない
@@ -75,7 +83,7 @@ const App = () => {
 
     return (
         <div>
-            <h2>アンケート</h2>
+            <h2>投稿ページ</h2>
 
             {/* Q1（静的選択肢） */}
             <label>
@@ -92,7 +100,7 @@ const App = () => {
 
             {/* Q2（API連動） */}
             <label>
-                Q2: 病院を選択してください
+                Q2: 病院を選択してください（※表示されるまで少し時間が掛かります）
                 <select value={q2} onChange={(e) => setQ2(e.target.value)}>
                     <option value="">選択してください</option>
                     {q2Options.length > 0 ? (
@@ -145,7 +153,11 @@ const App = () => {
                     ))}
                 </select>
             </label><br />
+            <p></p>
             <button type="submit" onClick={handleSubmit}>送信</button>
+            <p></p>
+
+            <button onClick={handleNavigate}>トップページに戻る</button>
         </div>
     );
 };
