@@ -75,7 +75,7 @@ const DataTable = () => {
             ))
           ) : (
             <tr>
-              <td colSpan="3">データがありません</td>
+              <td colSpan="3">データを読み込んでいます。お待ち下さい。</td>
             </tr>
           )}
         </tbody>

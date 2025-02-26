@@ -111,7 +111,7 @@ const App = () => {
                             </option>
                         ))
                     ) : (
-                        <option value="">データなし</option>
+                        <option value="">Q1で地域を選択して下さい</option>
                     )}
                 </select>
             </label><br />
